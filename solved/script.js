@@ -8,20 +8,26 @@ function buildQueryURL() {
 
   // Begin building an object to contain our API call's query parameters
   // Set the API key
-  var queryParams = { "api-key": "r2SF2QFLquUqK1qWX8i5yltINprQLwCP" };
+  var queryParams = { "api-key": "[API KEY HERE]" };
 
   // Grab text the user typed into the search input, add to the queryParams object
-  queryParams.q = $("#search-term").val().trim();
+  queryParams.q = $("#search-term")
+    .val()
+    .trim();
 
   // If the user provides a startYear, include it in the queryParams object
-  var startYear = $("#start-year").val().trim();
+  var startYear = $("#start-year")
+    .val()
+    .trim();
 
   if (parseInt(startYear)) {
     queryParams.begin_date = startYear + "0101";
   }
 
   // If the user provides an endYear, include it in the queryParams object
-  var endYear = $("#end-year").val().trim();
+  var endYear = $("#end-year")
+    .val()
+    .trim();
 
   if (parseInt(endYear)) {
     queryParams.end_date = endYear + "0101";
@@ -69,11 +75,11 @@ function updatePage(NYTData) {
       console.log(headline.main);
       $articleListItem.append(
         "<span class='label label-primary'>" +
-          articleCount +
-          "</span>" +
-          "<h2> " +
-          headline.main +
-          "</h2>"
+        articleCount +
+        "</span>" +
+        "<h2> " +
+        headline.main +
+        "</h2>"
       );
     }
 
@@ -100,9 +106,7 @@ function updatePage(NYTData) {
     }
 
     // Append and log url
-    $articleListItem.append(
-      "<a href='" + article.web_url + "'>" + article.web_url + "</a>"
-    );
+    $articleListItem.append("<a href='" + article.web_url + "'>" + article.web_url + "</a>");
     console.log(article.web_url);
 
     // Append the article
