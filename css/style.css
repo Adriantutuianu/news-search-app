@@ -1,0 +1,12 @@
+header {
+  text-align: center;
+  background-color: #e5e1da;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+  padding: 20px;
+}
+
+.btn-group {
+  padding: 20px;
+}
